@@ -1,0 +1,102 @@
+
+
+
+
+<html>
+    <head>
+
+        <style>
+
+            table,th,td {
+
+
+border:2px solid red;
+padding :10px;
+            }
+
+            button {
+
+padding:10px;
+
+
+            }
+            </style>
+        </head>
+
+<body >
+    <script>
+        
+
+var  data=[{firstName:"david", lastName:"oberia" ,email:"david@gmail.com",id:01,phoneNumber:1234567890,designation:"Bankmanager",DOB:"9-03-2004"},
+
+
+{firstName:"john", lastName:"Doe" ,email:"Doe@gmail.com",id:02,phoneNumber:1234569870,designation:"Finance Manager",DOB:"4-02-2001"},
+
+
+
+{firstName:"munjal", lastName:"sharma" ,email:"munjal@gmail.com",id:03,phoneNumber:1234568990,designation:"Deputymanager",DOB:"8-01-1998"},
+
+{firstName:"vivek", lastName:"sharma" ,email:"vivek@gmail.com",id:04,phoneNumber:1234567098,designation:"Custommanager",DOB:"22-01-2004"},
+{firstName:"david", lastName:"oberia" ,email:"david@gmail.com",id:05,phoneNumber:1234567890,designation:"ITmanager",DOB:"9-03-2011"},
+
+{firstName:"jake", lastName:"Liver" ,email:"Jake@gmail.com",id:06,phoneNumber:1234567890,designation:"Loanmanager",DOB:"9-03-2011"}
+
+
+]
+var keys;
+var values;
+function load()
+{
+
+
+    keys=Object.keys(data[1]);
+
+
+    values=data.map((element,index)=>{
+
+
+return Object.values(data[index])
+    
+})
+
+
+
+
+var td=[];
+var text=[];
+var table=document.createElement('table');
+
+
+var thead=document.createElement('thead');
+table.appendChild(thead);
+for(var i=0;i<keys.length;i++)
+{
+
+
+    var temp =document.createTextNode(keys[i])
+    thead.appendChild(document.createElement("th")).
+appendChild(temp);
+
+
+}
+for (var i = 0; i < values.length; i++){
+        var tr = document.createElement('tr');    
+        for(let j=0;j<keys.length;j++){
+             td[j] =document.createElement('td');
+             text[j] = document.createTextNode(values[i][j]);
+             td[j].appendChild(text[j]);
+             tr.appendChild(td[j])
+
+        }
+        table.appendChild(tr);
+}
+document.body.appendChild(table);
+    
+    
+}
+
+
+</script>
+
+<button type="button" onclick="load()">DynamicTableGenerate</button>
+</body>
